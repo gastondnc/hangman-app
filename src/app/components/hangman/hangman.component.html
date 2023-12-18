@@ -1,0 +1,16 @@
+
+
+<div class="hangman-container">
+  <div class="hangman">
+    <div class="head" *ngIf="counter > 0"></div>
+    <div class="up-body">
+      <div class="l-arm" *ngIf="counter > 2"></div>
+      <div class="body" *ngIf="counter > 1"></div>
+      <div class="r-arm" *ngIf="counter > 3"></div>
+    </div>
+    <div class="down-body">
+      <div class="l-leg" *ngIf="counter > 4"></div>
+      <div class="r-leg" *ngIf="counter > 5"></div>
+    </div>
+  </div>
+</div>

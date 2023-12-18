@@ -32,4 +32,4 @@
 * Colocar titulo en cuenta regresiva
 
 
-## Guit
+## Git

@@ -1,0 +1,8 @@
+<div class="modal-backdrop">
+
+  <div class="modal-container" [ngClass]="type === 'winner' ? 'modal-winner' : 'modal-loser' ">
+    <div class="modal-message">{{ message }}</div>
+    <button class="modal-btn" (click)="onClose()">{{ btnLabel }}</button>
+  </div>
+
+</div>
