@@ -35,11 +35,8 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     this.init()
-
   }
-
 
   init() {
     const randomIndex = this.getRandomIndex()
@@ -48,16 +45,13 @@ export class AppComponent implements OnInit {
     this.wordLetters = this.selectedWord.split('')
     this.viewLetters = this.wordLetters
     this.userLetters = new Array(this.wordLetters.length).fill('');
-
     this.helpTimer()
   }
-
 
   helpTimer() {
     if (this.interval) {
       clearInterval(this.interval)
     }
-
     this.interval = setInterval(() => {
       const selectedIdx: number[] = [];
       if (this.helpCounter > 0) {
@@ -70,7 +64,6 @@ export class AppComponent implements OnInit {
     }, 1000)
   }
 
-
   setRandomLetter() {
     const idxRandom = Math.floor(Math.random() * this.wordLetters.length)
     if (this.wordLetters[idxRandom].length === 0) {
@@ -81,30 +74,24 @@ export class AppComponent implements OnInit {
     this.wordLetters[idxRandom] = ''
   }
 
-
   normalizeWord(word: string): string {
     const lowered: string = word.toLowerCase()
     let normalized: string = lowered.replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u')
     return normalized
   }
 
-
   getRandomIndex(): number {
     const rand: number = Math.floor(Math.random() * this.words.length)
     return rand
   }
 
-
   setLetter(event: any, index: number) {
-
     const userInputValue: string = this.normalizeWord(event.target.value)
-
     if (this.viewLetters[index] === userInputValue) {
       this.userLetters[index] = userInputValue;
       this.wordLetters[index] = ''
     } else {
       this.userInputFailed = `${this.userInputFailed}  ${userInputValue}`
-      console.log('Letra INcorrecta')
       this.userLetters[index] = '';
       this.errorCounter = this.errorCounter + 1
 
@@ -113,10 +100,8 @@ export class AppComponent implements OnInit {
         return;
       }
     }
-
     this.checkResult()
   }
-
 
   checkResult() {
     const wordResult: string = this.selectedWord
@@ -126,31 +111,22 @@ export class AppComponent implements OnInit {
     }
   }
 
-
   openModal(typeModal: 'winner' | 'loser', wordResult?: string) {
     clearInterval(this.interval)
-
     this.modal.message = typeModal === 'winner'
     ? `Felicidades el nombre ${wordResult} es el correcto`
     : 'Lo siento el nombre no es la correcto'
     this.modal.type = typeModal
-
     setTimeout(() => {
       this.modal.show = true;
-
     }, 500);
   }
-
-
 
   closeModal() {
     this.modal.message = '';
     this.modal.show = false;
-
-
     this.reset()
   }
-
 
   reset() {
     this.wordLetters = [];
@@ -161,11 +137,34 @@ export class AppComponent implements OnInit {
     this.errorCounter = 0
     this.helpCounter = this.intervalHelper;
     this.userInputFailed = '';
-
     this.init()
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

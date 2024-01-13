@@ -12,17 +12,16 @@ export class ModalComponent {
 
   public btnLabel: string = 'Close';
 
-
   constructor() {}
 
-
   onClose() {
-    console.log('Cerrar')
     this.onCloseEmitter.emit(true)
-
   }
-
-
 }
+
+
+
+
+
 
 
