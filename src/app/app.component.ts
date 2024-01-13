@@ -30,9 +30,7 @@ export class AppComponent implements OnInit {
   }
   public userInputFailed: string = '';
 
-
   constructor() { }
-
 
   ngOnInit(): void {
     this.init()
@@ -141,6 +139,8 @@ export class AppComponent implements OnInit {
   }
 
 }
+
+
 
 
 

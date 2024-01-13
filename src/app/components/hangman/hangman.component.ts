@@ -11,8 +11,3 @@ export class HangmanComponent {
   constructor(){}
 
 }
-
-
-
-
-
